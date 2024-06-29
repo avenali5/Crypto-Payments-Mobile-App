@@ -8,9 +8,7 @@ import {
 } from "react-native";
 import { styles } from "./LinkOption.style";
 import { CustomText } from "@/src/common/components";
-// @ts-ignore
 import QRCode from "@/assets/icons/scan_barcode.png";
-// @ts-ignore
 import PayBitnovo from "@/assets/icons/pay_bitnovo.png";
 import { useRouter } from "expo-router";
 

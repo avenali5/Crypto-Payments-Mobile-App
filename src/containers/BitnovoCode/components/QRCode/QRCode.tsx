@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import { Image, View } from "react-native";
+import { Dimensions, Image, View } from "react-native";
 import { styles } from "./QRCode.style";
 import { CustomText } from "@/src/common/components";
 import Exclamation from "@/assets/icons/instructions.png";
-export function QRCode() {
+import Logo from "@/assets/images/logo_bitnovo.png";
+import QRCode from "react-native-qrcode-svg";
+import { currencyStore } from "@/src/store";
+
+export function QRCodeWrapper() {
+  const { currentAmount } = currencyStore();
   return (
     <View style={styles.container}>
       <View style={styles.instructions}>
@@ -12,7 +17,18 @@ export function QRCode() {
           Escanea el QR y serás redirigido a la pasarela de pago de Bitnovo Pay.
         </CustomText>
       </View>
-      <CustomText>codigo</CustomText>
+      <View style={styles.codeWrapper}>
+        <QRCode
+          value="Just some string value"
+          logo={Logo}
+          logoSize={Dimensions.get("window").width - 270}
+          logoBackgroundColor="transparent"
+          size={Dimensions.get("window").width - 80}
+          color="#002859"
+          ecl="Q"
+        />
+      </View>
+      <CustomText style={styles.amount}>{currentAmount}</CustomText>
       <CustomText style={styles.willUpdate}>
         Esta pantalla se actualizará automáticamente.
       </CustomText>

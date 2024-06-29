@@ -9,6 +9,7 @@ export function CurrencyAmount() {
   const { currentAmount, currentCurrency, setAmount, currencySign } =
     currencyStore();
   const [value, setValue] = useState(currentAmount);
+  const [pressing, setPressing] = useState(false);
 
   useEffect(() => {
     setAmount(value);
@@ -20,28 +21,31 @@ export function CurrencyAmount() {
         // @ts-ignore
         value={value}
         placeholderTextColor="#C0CCDA"
-        caretHidden
         // @ts-ignore
         onChangeValue={setValue}
         delimiter="."
         separator=","
         precision={2}
+        maxValue={99999}
+        onPressIn={() => setPressing(true)}
+        onPressOut={() => setPressing(false)}
         placeholder={
           currentCurrency === "USD" || currentCurrency === "GBP"
             ? `${currencySign} 0.00`
             : `0.00 ${currencySign}`
         }
-        maxValue={9999}
         prefix={
           currentCurrency === "USD" || currentCurrency === "GBP"
-            ? currencySign
+            ? `${currencySign} `
             : ""
         }
-        suffix={currentCurrency === "EUR" ? currencySign : ""}
+        suffix={currentCurrency === "EUR" ? ` ${currencySign}` : ""}
         onChangeText={(formattedValue) => {
           setAmount(formattedValue);
         }}
-        style={[styles.text, styles.input]}
+        style={[styles.text, styles.input, pressing && styles.pressing]}
+        selectionColor="#00000050"
+        sele
       />
     </View>
   );

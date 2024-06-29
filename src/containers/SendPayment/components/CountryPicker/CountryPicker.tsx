@@ -2,21 +2,13 @@ import { Header, PickerOption, Searchbar } from "@/src/common/components";
 import React, { useEffect, useState } from "react";
 import { View } from "react-native";
 import { styles } from "./CountryPicker.style";
-// @ts-ignore
 import FlagESP from "@/assets/images/flag_spain.png";
-// @ts-ignore
 import FlagGUI from "@/assets/images/flag_guinea.png";
-// @ts-ignore
 import FlagGRE from "@/assets/images/flag_greece.png";
-// @ts-ignore
 import FlagGBP from "@/assets/images/flag_uk.png";
-// @ts-ignore
 import FlagGUA from "@/assets/images/flag_guatemala.png";
-// @ts-ignore
 import FlagGUY from "@/assets/images/flag_guyana.png";
-// @ts-ignore
 import FlagHNK from "@/assets/images/flag_hong.png";
-// @ts-ignore
 import FlagHON from "@/assets/images/flag_honduras.png";
 
 type Props = {

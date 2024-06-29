@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import {
+  Alert,
   Image,
+  Keyboard,
   Linking,
   Pressable,
   TextInput,
@@ -9,15 +11,19 @@ import {
 } from "react-native";
 import { styles } from "./LinkOption.style";
 import { CustomText } from "@/src/common/components";
-// @ts-ignore
 import Email from "@/assets/icons/envelope.png";
-// @ts-ignore
 import qs from "qs";
+import { dialogStore } from "@/src/store";
 
-export function EmailShare() {
+type Props = {
+  setDialog: (val: boolean) => void;
+};
+
+export function EmailShare({ setDialog }: Props) {
   const [active, setActive] = useState(false);
   const [email, setEmail] = useState("");
   const [focus, setFocus] = useState(false);
+  const { setDialogSubtitle } = dialogStore();
 
   const handlePress = () => {
     setActive(true);
@@ -42,8 +48,23 @@ export function EmailShare() {
     }
 
     return Linking.openURL(url)
-      .then(() => {})
-      .catch(() => {});
+      .then(() => {
+        Keyboard.dismiss();
+        setEmail("");
+        setDialogSubtitle(
+          "Tu solicitud de pago ha sido enviada con éxito por email."
+        );
+        setTimeout(() => {
+          setActive(false);
+          setDialog(true);
+        }, 1000);
+      })
+      .catch(() => {
+        Alert.alert(
+          "Error",
+          "No puedes abrir la app de email en este dispositivo"
+        );
+      });
   }
 
   return (

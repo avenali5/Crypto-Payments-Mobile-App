@@ -11,9 +11,9 @@ import {
 } from "react-native";
 import { styles } from "./LinkOption.style";
 import { CustomText } from "@/src/common/components";
-// @ts-ignore
 import WSP from "@/assets/icons/whatsapp.png";
 import Entypo from "@expo/vector-icons/Entypo";
+import { dialogStore } from "@/src/store";
 
 type Props = {
   countryCode: string;
@@ -25,6 +25,7 @@ export function WhatsappShare({ countryCode, setModal, setDialog }: Props) {
   const [active, setActive] = useState(false);
   const [focus, setFocus] = useState(false);
   const [phone, setPhone] = useState("");
+  const { setDialogSubtitle } = dialogStore();
 
   const handlePress = () => {
     setActive(true);
@@ -35,8 +36,11 @@ export function WhatsappShare({ countryCode, setModal, setDialog }: Props) {
       .then(() => {
         Keyboard.dismiss();
         setPhone("");
-        setActive(false);
+        setDialogSubtitle(
+          "Tu solicitud de pago ha sido enviada con éxito por WhatsApp."
+        );
         setTimeout(() => {
+          setActive(false);
           setDialog(true);
         }, 1000);
       })

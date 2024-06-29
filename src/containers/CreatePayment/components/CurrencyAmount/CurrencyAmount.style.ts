@@ -21,5 +21,9 @@ export const styles = EStyleSheet.create({
     fontFamily: "mulish-regular",
     width: "100%",
     textAlign: "center",
+    transform: [{ scale: 1 }],
+  },
+  pressing: {
+    transform: [{ scale: 1.1 }],
   },
 });

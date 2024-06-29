@@ -1,5 +1,5 @@
 export async function orders_list(deviceId: string) {
-  const url = `https://pos.bitnovo.com/api/v1/orders/`;
+  const url = `https://payments.pre-bnvo.com/api/v1/orders/`;
   const headers = {
     "X-Device-Id": deviceId,
   };

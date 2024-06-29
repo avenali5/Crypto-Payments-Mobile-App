@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { View } from "react-native";
 import { styles } from "./BitnovoCode.style";
-import { QRCode } from "./components/QRCode/QRCode";
+import { QRCodeWrapper } from "./components/QRCode/QRCode";
 
 export function BitnovoCode() {
   return (
     <View style={styles.container}>
-      <QRCode />
+      <QRCodeWrapper />
     </View>
   );
 }

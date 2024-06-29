@@ -3,7 +3,6 @@ import { Image, View } from "react-native";
 import { styles } from "./PaymentTotal.style";
 import { CustomText } from "@/src/common/components";
 import { currencyStore } from "@/src/store";
-// @ts-ignore
 import MoneyTime from "@/assets/icons/money_time.png";
 
 export function PaymentTotal() {

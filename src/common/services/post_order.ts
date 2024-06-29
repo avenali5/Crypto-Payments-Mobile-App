@@ -1,45 +1,32 @@
-import { BASE_URL, DEVICE_ID } from "../constants/services";
+import axios from "axios";
 
-export const createOrder = async () => {
-  const url = `${BASE_URL}/orders_create`;
-  const headers = new Headers({
-    //   'Authorization': 'Basic ' + btoa('your-username:your-password'),
-    "X-Device-Id": DEVICE_ID,
-  });
+type Props = {
+  amount: number;
+  reference?: string;
+  fiat: string;
+};
 
-  const formData = new FormData();
-  formData.append("expected_output_amount", "1000");
-  formData.append("input_currency", "BTC");
-  formData.append("merchant_urlko", "https://merchant.com/urlko");
-  formData.append("merchant_urlok", "https://merchant.com/urlok");
-  formData.append("merchant_url_standby", "https://merchant.com/urlstandby");
-  formData.append("notes", "Payment for services");
-  formData.append("reference", "REF123456");
-  formData.append("fiat", "EUR");
-  formData.append("language", "ES");
-  formData.append("home_address", "123 Main Street");
-  formData.append("address_additional", "Apt 4B");
-  formData.append("email_client", "client@example.com");
-  formData.append("full_name", "John Doe");
-  formData.append("address_number", "123");
-  formData.append("zip_code", "12345");
-  formData.append("city", "Madrid");
-  formData.append("province", "Madrid");
-  formData.append("country", "ES");
-  formData.append("phone_number", "+34123456789");
-  formData.append("nif", "12345678Z");
-  formData.append("internal_data", "Internal info about the payment");
+export async function postOrder({ amount, reference, fiat }: Props) {
+  const data = {
+    expected_output_amount: Number(amount),
+    reference: reference,
+    fiat: fiat,
+  };
 
   try {
-    const response = await fetch(url, {
-      method: "POST",
-      headers: headers,
-      body: formData,
-    });
-
-    const result = await response.json();
-    console.log(result);
+    console.log(data);
+    // const response = await axios.post(
+    //   "https://payments.pre-bnvo.com/api/v1/orders/",
+    //   data,
+    //   {
+    //     headers: {
+    //       "X-Device-Id": "ec8eccef-f2d1-40f4-82e1-c6c52eee92e6",
+    //     },
+    //   }
+    // );
+    // return response.data;
   } catch (error) {
     console.error("Error:", error);
+    throw error;
   }
-};
+}

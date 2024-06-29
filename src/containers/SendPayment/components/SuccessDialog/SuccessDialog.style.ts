@@ -6,12 +6,10 @@ export const styles = EStyleSheet.create({
     // height: Dimensions.get("window").height,
     width: Dimensions.get("window").width,
     height: "100%",
-
     position: "absolute",
-    // top: -130,
     top: 0,
     left: 0,
-    backgroundColor: "blue",
+
     justifyContent: "flex-end",
     padding: 18,
     paddingBottom: 36,
@@ -24,12 +22,26 @@ export const styles = EStyleSheet.create({
     backgroundColor: "blue",
     opacity: 0.5,
   },
+  background: {
+    height: Dimensions.get("window").height,
+    width: Dimensions.get("window").width,
+    position: "absolute",
+    backgroundColor: "#00285930",
+    left: 0,
+    top: 0,
+  },
   card: {
     backgroundColor: "white",
     padding: 20,
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
+
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    elevation: 2,
   },
   img: {
     width: 80,

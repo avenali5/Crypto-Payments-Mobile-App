@@ -10,6 +10,7 @@ export const styles = EStyleSheet.create({
     padding: 16,
     gap: 10,
     marginBottom: 20,
+    width: "100%",
   },
   topWrapper: {
     flexDirection: "row",

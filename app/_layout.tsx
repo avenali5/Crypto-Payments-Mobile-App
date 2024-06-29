@@ -18,10 +18,6 @@ export default function RootLayout() {
     ...FontAwesome.font,
   });
 
-  // useFonts({
-  //   TwemojiMozilla: require("../node_modules/react-native-international-phone-number/lib/assets/fonts/TwemojiMozilla.woff2"),
-  // });
-
   useEffect(() => {
     if (error) throw error;
   }, [error]);
@@ -45,14 +41,12 @@ function RootLayoutNav() {
       <Stack.Screen
         name="index"
         options={{
-          headerShown: true,
           header: () => <Header title="Crear pago" hasDropdown />,
         }}
       />
       <Stack.Screen
         name="change-currency"
         options={{
-          headerShown: true,
           header: () => (
             <Header title="Selecciona una divisa" hasBackArrow noShadow />
           ),

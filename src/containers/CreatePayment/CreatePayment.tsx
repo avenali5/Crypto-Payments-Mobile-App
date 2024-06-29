@@ -2,35 +2,30 @@ import { CurrencyAmount } from "./components/CurrencyAmount/CurrencyAmount";
 import React from "react";
 import { Pressable, Text, View } from "react-native";
 import { PaymentConcept } from "./components/PaymentConcept/PaymentConcept";
-import { Button, ModalCustom } from "@/src/common/components";
+import { Button } from "@/src/common/components";
 import { styles } from "./CreatePayment.style";
 import { currencyStore } from "@/src/store";
-import { createOrder } from "@/src/common/services";
-import { orders_list } from "@/src/common/services/get_orders";
 import { useRouter } from "expo-router";
+import { BASE_URL } from "@/src/common/constants/services";
+import { postOrder } from "@/src/common/services/post_order";
+import { CreateOrderResponseType } from "@/src/common/types";
 
 export function CreatePayment() {
-  const { currentAmount, currentCurrency, setAmount, currencySign } =
-    currencyStore();
+  const { currentAmount, currentCurrency, reference } = currencyStore();
   const router = useRouter();
 
   const handleCreatePayment = async () => {
-    // orders_list("ec8eccef-f2d1-40f4-82e1-c6c52eee92e6");
-    router.push("/send-payment");
+    postOrder({ amount: currentAmount, fiat: currentCurrency, reference }).then(
+      (res: CreateOrderResponseType) => {}
+    );
+    // router.push("/send-payment");
   };
 
   return (
     <View style={styles.container}>
       <CurrencyAmount />
       <PaymentConcept />
-      <Pressable
-        onPress={() =>
-          // getOrders().then((res) => {
-          //   console.log(res);
-          // })
-          handleCreatePayment()
-        }
-      >
+      <Pressable onPress={handleCreatePayment}>
         <Text style={{ fontFamily: "Mulish-Bold", fontSize: 30 }}>pressa</Text>
       </Pressable>
       <Button

@@ -4,11 +4,8 @@ import React, { useEffect, useState } from "react";
 import { View } from "react-native";
 import { styles } from "./ChangeCurrency.style";
 import { useRouter } from "expo-router";
-// @ts-ignore
 import FlagEUR from "@/assets/images/flag_eur.png";
-// @ts-ignore
 import FlagUSA from "@/assets/images/flag_usa.png";
-// @ts-ignore
 import FlagGBP from "@/assets/images/flag_uk.png";
 
 export function ChangeCurrency() {

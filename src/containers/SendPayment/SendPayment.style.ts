@@ -11,5 +11,6 @@ export const styles = EStyleSheet.create({
     width: "100%",
     flex: 1,
     paddingBottom: 28,
+    alignItems: "center",
   },
 });

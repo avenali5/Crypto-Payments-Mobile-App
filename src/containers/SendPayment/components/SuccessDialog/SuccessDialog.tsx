@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Image, View } from "react-native";
+import { Image, Pressable, View } from "react-native";
 import { styles } from "./SuccessDialog.style";
 import { Button, CustomText } from "@/src/common/components";
-// @ts-ignore
 import Check from "@/assets/icons/success_check.png";
+import { dialogStore } from "@/src/store";
 // import { BlurView } from "expo-blur";
 // import { BlurView } from "react-native-blur";
 
@@ -12,6 +12,8 @@ type Props = {
 };
 
 export function SuccessDialog({ setDialog }: Props) {
+  const { dialogSubtitle } = dialogStore();
+
   return (
     <View style={styles.container}>
       {/* <BlurView
@@ -23,12 +25,11 @@ export function SuccessDialog({ setDialog }: Props) {
         //   intensity={40}
         style={styles.blur}
       /> */}
+      <Pressable style={styles.background} onPress={() => setDialog(false)} />
       <View style={styles.card}>
         <Image source={Check} style={styles.img} />
         <CustomText style={styles.title}>Solicitud enviada</CustomText>
-        <CustomText style={styles.subtitle}>
-          Tu solicitud de pago enviada ha sido enviado con éxito por WhatsApp.
-        </CustomText>
+        <CustomText style={styles.subtitle}>{dialogSubtitle}</CustomText>
         <Button
           text="Entendido"
           type="primary"

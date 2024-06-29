@@ -19,13 +19,13 @@ export function Options({ setDialog }: Props) {
   return (
     <View style={styles.container}>
       <BitnovoShare />
-      <EmailShare />
+      <EmailShare setDialog={setDialog} />
       <WhatsappShare
         setModal={setVisible}
         countryCode={countryCode}
         setDialog={setDialog}
       />
-      <AppsShare />
+      <AppsShare setDialog={setDialog} />
 
       <ModalCustom
         isVisible={visible}
