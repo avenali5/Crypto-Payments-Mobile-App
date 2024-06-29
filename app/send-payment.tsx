@@ -2,7 +2,7 @@ import { SendPayment } from "@/src/containers";
 import { View } from "react-native";
 import EStyleSheet from "react-native-extended-stylesheet";
 
-export default function ChangeCurrencyContainer() {
+export default function SendPaymentContainer() {
   return (
     <View style={styles.container}>
       <SendPayment />

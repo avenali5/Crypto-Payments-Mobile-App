@@ -1,10 +1,15 @@
-import { Searchbar } from "@/src/common/components";
+import { PickerOption, Searchbar } from "@/src/common/components";
 import { currencyStore } from "@/src/store";
 import React, { useEffect, useState } from "react";
 import { View } from "react-native";
 import { styles } from "./ChangeCurrency.style";
 import { useRouter } from "expo-router";
-import { CurrencyOption } from "./components/CurrencyOption/CurrencyOption";
+// @ts-ignore
+import FlagEUR from "@/assets/images/flag_eur.png";
+// @ts-ignore
+import FlagUSA from "@/assets/images/flag_usa.png";
+// @ts-ignore
+import FlagGBP from "@/assets/images/flag_uk.png";
 
 export function ChangeCurrency() {
   const router = useRouter();
@@ -14,17 +19,17 @@ export function ChangeCurrency() {
     {
       name: "Euro",
       short: "EUR",
-      flag: "flag_eur",
+      flag: FlagEUR,
     },
     {
       name: "Dólar Estadounidense",
       short: "USD",
-      flag: "flag_usd",
+      flag: FlagUSA,
     },
     {
       name: "Libra Esterlina",
       short: "GBP",
-      flag: "flag_uk",
+      flag: FlagGBP,
     },
   ];
   const [filteredCurrencies, setFilteredCurrencies] = useState(currencies);
@@ -52,11 +57,12 @@ export function ChangeCurrency() {
         onChangeText={setSearchValue}
       />
       {filteredCurrencies.map((currency) => (
-        <CurrencyOption
-          key={currency.short}
-          currency={currency}
-          currentCurrency={currentCurrency}
-          handleCurrencyChange={handleCurrencyChange}
+        <PickerOption
+          title={currency.name}
+          subtitle={currency.short}
+          flag={currency.flag}
+          handleSelect={handleCurrencyChange}
+          currentSelected={currentCurrency}
         />
       ))}
     </View>

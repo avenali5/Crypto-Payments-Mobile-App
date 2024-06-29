@@ -1,7 +1,4 @@
 import EStyleSheet from "react-native-extended-stylesheet";
-import Constants from "expo-constants";
-
-export const PADDING = 16;
 
 export const styles = EStyleSheet.create({
   button: {
@@ -14,5 +11,6 @@ export const styles = EStyleSheet.create({
     backgroundColor: "$LITTLE_BUTTON_BACKGROUND",
     padding: 3,
     borderRadius: 200,
+    width: 32,
   },
 });

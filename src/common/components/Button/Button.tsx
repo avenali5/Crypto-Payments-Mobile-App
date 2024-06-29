@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity } from "react-native";
+import { Image, ImageSourcePropType, TouchableOpacity } from "react-native";
 import { CustomText } from "..";
 import { styles } from "./Button.style";
 
@@ -8,9 +8,10 @@ type Props = {
   type: "primary" | "secondary";
   disabled?: boolean;
   onPress: () => void;
+  icon?: ImageSourcePropType;
 };
 
-export function Button({ text, disabled, type, onPress }: Props) {
+export function Button({ text, disabled, type, onPress, icon }: Props) {
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -26,6 +27,7 @@ export function Button({ text, disabled, type, onPress }: Props) {
       >
         {text}
       </CustomText>
+      {icon && <Image source={icon} style={styles.icon} />}
     </TouchableOpacity>
   );
 }

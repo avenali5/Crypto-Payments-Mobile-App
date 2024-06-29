@@ -8,6 +8,10 @@ export const styles = EStyleSheet.create({
     padding: 18,
     borderRadius: 6,
     width: "100%",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 12,
   },
   disabled: {
     backgroundColor: "$BUTTON_BACKGROUND_COLOR_DISABLED",

@@ -16,12 +16,7 @@ export function ModalCustom({
   hasX,
 }: IModalProps) {
   return (
-    <Modal
-      animationType="fade"
-      transparent
-      visible={isVisible}
-      onRequestClose={closeModal}
-    >
+    <Modal animationType="fade" visible={isVisible} onRequestClose={closeModal}>
       <View style={styles.boxWrapper}>
         <View style={styles.box}>
           {hasX && (

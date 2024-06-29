@@ -1,50 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { View } from "react-native";
 import { styles } from "./Options.style";
-// @ts-ignore
-import { LinkOption } from "../LinkOption/LinkOption";
-import Email from "@/assets/icons/envelope.png";
-import PayBitnovo from "@/assets/icons/pay_bitnovo.png";
-import WSP from "@/assets/icons/whatsapp.png";
-import Share from "@/assets/icons/share.png";
+import { BitnovoShare } from "../LinkOption/BitnovoShare";
+import { WhatsappShare } from "../LinkOption/WhatsappShare";
+import { EmailShare } from "../LinkOption/EmailShare";
+import { AppsShare } from "../LinkOption/AppsShare";
+import { ModalCustom } from "@/src/common/components";
+import CountryPicker from "../CountryPicker/CountryPicker";
 
-export function Options() {
-  const linkOptions = [
-    {
-      label: "pay.bitnovo.com/59f9g9",
-      icon: PayBitnovo,
-      hasQR: true,
-      type: "bitnovo",
-    },
-    {
-      label: "Enviar por correo electrónico",
-      icon: Email,
-      type: "email",
-    },
-    {
-      label: "Enviar a número de Whatsapp",
-      icon: WSP,
-      type: "wsp",
-    },
-    {
-      label: "Compartir con otras aplicaciones",
-      icon: Share,
-      type: "share",
-    },
-  ];
+type Props = {
+  setDialog: (value: boolean) => void;
+};
+
+export function Options({ setDialog }: Props) {
+  const [visible, setVisible] = useState(false);
+  const [countryCode, setCountryCode] = useState("+33");
 
   return (
     <View style={styles.container}>
-      {linkOptions.map((option, index) => (
-        <LinkOption
-          label={option.label}
-          icon={option.icon}
-          onPress={() => {}}
-          hasQR={option.hasQR}
-          key={option.label}
-          type={option.type}
+      <BitnovoShare />
+      <EmailShare />
+      <WhatsappShare
+        setModal={setVisible}
+        countryCode={countryCode}
+        setDialog={setDialog}
+      />
+      <AppsShare />
+
+      <ModalCustom
+        isVisible={visible}
+        closeModal={() => {
+          setVisible(false);
+        }}
+      >
+        <CountryPicker
+          countryCode={countryCode}
+          setCountryCode={setCountryCode}
+          setModal={setVisible}
         />
-      ))}
+      </ModalCustom>
     </View>
   );
 }

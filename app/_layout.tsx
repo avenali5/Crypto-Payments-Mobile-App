@@ -18,6 +18,10 @@ export default function RootLayout() {
     ...FontAwesome.font,
   });
 
+  // useFonts({
+  //   TwemojiMozilla: require("../node_modules/react-native-international-phone-number/lib/assets/fonts/TwemojiMozilla.woff2"),
+  // });
+
   useEffect(() => {
     if (error) throw error;
   }, [error]);
@@ -58,6 +62,12 @@ function RootLayoutNav() {
         name="send-payment"
         options={{
           headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="bitnovo-code"
+        options={{
+          header: () => <Header title="" hasBackArrow noShadow />,
         }}
       />
     </Stack>

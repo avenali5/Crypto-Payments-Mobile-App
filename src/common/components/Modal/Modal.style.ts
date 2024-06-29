@@ -5,8 +5,11 @@ export const styles = EStyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
-    position: "relative",
+    position: "absolute",
     justifyContent: "space-between",
-    backgroundColor: "$BACKGROUND_COLOR",
+    backgroundColor: "blue",
+    height: "100%",
+    width: "100%",
+    zIndex: 100,
   },
 });

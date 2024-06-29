@@ -1,5 +1,4 @@
 import EStyleSheet from "react-native-extended-stylesheet";
-import Constants from "expo-constants";
 
 export const styles = EStyleSheet.create({
   container: {
@@ -20,6 +19,9 @@ export const styles = EStyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 12,
+    focus: {
+      borderColor: "$BUTTON_BACKGROUND_COLOR",
+    },
   },
   label: {
     color: "$TINT_COLOR_PRIMARY",
@@ -35,5 +37,28 @@ export const styles = EStyleSheet.create({
   icon: {
     width: 20,
     height: 20,
+  },
+  actionWrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "96%",
+  },
+  inputWrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  prefixPicker: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  cta: {
+    backgroundColor: "$BUTTON_BACKGROUND_COLOR",
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    borderRadius: 6,
+    label: {
+      color: "#FFF",
+    },
   },
 });

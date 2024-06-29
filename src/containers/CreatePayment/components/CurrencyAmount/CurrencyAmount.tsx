@@ -14,8 +14,6 @@ export function CurrencyAmount() {
     setAmount(value);
   }, [value]);
 
-  console.log(currencySign);
-
   return (
     <View style={styles.container}>
       <CurrencyInput
