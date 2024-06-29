@@ -1,4 +1,5 @@
 import axios from "axios";
+import { CreateOrderResponseType } from "../types";
 
 type Props = {
   amount: number;
@@ -6,9 +7,13 @@ type Props = {
   fiat: string;
 };
 
-export async function postOrder({ amount, reference, fiat }: Props) {
+export async function postOrder({
+  amount,
+  reference,
+  fiat,
+}: Props): Promise<CreateOrderResponseType> {
   const data = {
-    expected_output_amount: Number(amount),
+    expected_output_amount: amount,
     reference: reference,
     fiat: fiat,
   };

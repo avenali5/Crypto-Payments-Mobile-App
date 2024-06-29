@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Dimensions, Image, View } from "react-native";
 import { styles } from "./QRCode.style";
 import { CustomText } from "@/src/common/components";
@@ -8,7 +8,7 @@ import QRCode from "react-native-qrcode-svg";
 import { currencyStore } from "@/src/store";
 
 export function QRCodeWrapper() {
-  const { currentAmount } = currencyStore();
+  const { currentAmount, currencySign, currentCurrency } = currencyStore();
   return (
     <View style={styles.container}>
       <View style={styles.instructions}>
@@ -28,7 +28,12 @@ export function QRCodeWrapper() {
           ecl="Q"
         />
       </View>
-      <CustomText style={styles.amount}>{currentAmount}</CustomText>
+      <CustomText style={styles.amount}>
+        {" "}
+        {currentCurrency === "USD" || currentCurrency === "GBP"
+          ? `${currencySign} ${currentAmount?.toFixed(2)}`
+          : `${currentAmount?.toFixed(2)} ${currencySign}`}
+      </CustomText>
       <CustomText style={styles.willUpdate}>
         Esta pantalla se actualizará automáticamente.
       </CustomText>

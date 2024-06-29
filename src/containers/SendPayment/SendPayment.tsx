@@ -15,7 +15,7 @@ export function SendPayment() {
   const { setAmount } = currencyStore();
 
   const handleNewRequest = () => {
-    setAmount("");
+    setAmount(0);
     router.push("/");
   };
 

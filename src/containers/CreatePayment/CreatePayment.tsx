@@ -6,19 +6,22 @@ import { Button } from "@/src/common/components";
 import { styles } from "./CreatePayment.style";
 import { currencyStore } from "@/src/store";
 import { useRouter } from "expo-router";
+import { postOrder } from "@/src/common/services";
 import { BASE_URL } from "@/src/common/constants/services";
-import { postOrder } from "@/src/common/services/post_order";
-import { CreateOrderResponseType } from "@/src/common/types";
 
 export function CreatePayment() {
   const { currentAmount, currentCurrency, reference } = currencyStore();
   const router = useRouter();
 
   const handleCreatePayment = async () => {
-    postOrder({ amount: currentAmount, fiat: currentCurrency, reference }).then(
-      (res: CreateOrderResponseType) => {}
-    );
-    // router.push("/send-payment");
+    postOrder({
+      amount: currentAmount!,
+      fiat: currentCurrency,
+      reference,
+    }).then((res) => {
+      // console.log(res);
+    });
+    router.push("/send-payment");
   };
 
   return (
@@ -31,7 +34,7 @@ export function CreatePayment() {
       <Button
         type="primary"
         text="Continuar"
-        disabled={currentAmount == "0" || !currentAmount}
+        disabled={currentAmount === 0 || !currentAmount}
         onPress={handleCreatePayment}
       />
     </View>
