@@ -26,11 +26,11 @@ export function PaymentData({ params }: Props) {
     <View style={styles.container}>
       <View style={styles.card}>
         <Image source={Check} style={styles.check} />
-        <CustomText style={styles.title}>
+        <CustomText isBold style={styles.title}>
           ¡Pago recibido exitosamente!
         </CustomText>
         <View style={styles.idWrapper}>
-          <CustomText style={styles.idText}>
+          <CustomText style={styles.idText} isBold>
             #{params?.identifier?.slice(0, 18)}...
           </CustomText>
         </View>
@@ -39,24 +39,28 @@ export function PaymentData({ params }: Props) {
         <View style={styles.dataItem}>
           <Image source={Quantity} style={styles.icon} />
           <CustomText style={styles.label}>Cantidad</CustomText>
-          <CustomText style={styles.value}>
+          <CustomText style={styles.value} isBold>
             {params.total} {params.fiat}
           </CustomText>
         </View>
         <View style={styles.dataItem}>
           <Image source={Calendar} style={styles.icon} />
           <CustomText style={styles.label}>Pagado en</CustomText>
-          <CustomText style={styles.value}>{formattedDate}</CustomText>
+          <CustomText style={styles.value} isBold>
+            {formattedDate}
+          </CustomText>
         </View>
         <View style={styles.dataItem}>
           <Image source={Cripto} style={styles.icon} />
           <CustomText style={styles.label}>Criptomoneda</CustomText>
-          <CustomText style={styles.value}>{params.cripto}</CustomText>
+          <CustomText style={styles.value} isBold>
+            {params.cripto}
+          </CustomText>
         </View>
         <View style={styles.dataItem}>
           <Image source={Reference} style={styles.icon} />
           <CustomText style={styles.label}>Referencia</CustomText>
-          <CustomText style={styles.value}>
+          <CustomText style={styles.value} isBold>
             {params.reference || "-"}
           </CustomText>
         </View>

@@ -70,10 +70,11 @@ export function EmailShare({ setDialog }: Props) {
                   onChangeText={(newEmail) => {
                     setEmail(newEmail);
                   }}
+                  style={{ fontFamily: "Mulish-Regular", width: "80%" }}
                 />
               </View>
               <TouchableOpacity
-                style={styles.cta}
+                style={[styles.cta, email.length === 0 && styles.cta.disabled]}
                 disabled={email.length === 0}
                 onPress={() => {
                   sendEmail(

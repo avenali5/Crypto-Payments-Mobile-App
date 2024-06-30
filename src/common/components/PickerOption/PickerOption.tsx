@@ -35,7 +35,9 @@ export function PickerOption({
     >
       <Image source={flag} style={styles.flag} resizeMode="contain" />
       <View style={styles.textWrapper}>
-        <CustomText style={styles.currName}>{title}</CustomText>
+        <CustomText isBold style={styles.currName}>
+          {title}
+        </CustomText>
         <CustomText style={styles.currShort}>
           {subtitle.length >= 29 ? `${subtitle.substring(0, 29)}...` : subtitle}
         </CustomText>

@@ -19,7 +19,7 @@ export const styles = EStyleSheet.create({
     fontSize: "1rem",
     width: "100%",
     flex: 1,
-    fontFamily: "mulish-regular",
+    fontFamily: "Mulish-Regular",
   },
   type: {
     default: {

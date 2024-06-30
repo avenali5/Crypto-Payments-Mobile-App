@@ -75,11 +75,12 @@ export function WhatsappShare({ countryCode, setModal, setDialog }: Props) {
                   onChangeText={(newPhone) => {
                     setPhone(newPhone);
                   }}
+                  style={{ fontFamily: "Mulish-Regular", width: "80%" }}
                 />
               </View>
               <TouchableOpacity
                 onPress={handleSend}
-                style={styles.cta}
+                style={[styles.cta, phone.length === 0 && styles.cta.disabled]}
                 disabled={phone.length === 0}
               >
                 <CustomText style={styles.cta.label}>Enviar</CustomText>

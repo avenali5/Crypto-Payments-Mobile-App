@@ -34,7 +34,6 @@ export const styles = EStyleSheet.create({
   },
   amount: {
     fontSize: "1.8rem",
-    fontWeight: 700,
     color: "white",
     textAlign: "center",
   },

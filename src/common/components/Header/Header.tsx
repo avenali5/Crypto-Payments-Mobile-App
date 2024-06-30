@@ -25,7 +25,9 @@ export function Header({
       ) : (
         <View style={{ width: 66 }} />
       )}
-      <CustomText style={styles.title}>{title}</CustomText>
+      <CustomText isBold style={styles.title}>
+        {title}
+      </CustomText>
       {hasDropdown ? <ChangeCurrency /> : <View style={{ width: 66 }} />}
     </View>
   );

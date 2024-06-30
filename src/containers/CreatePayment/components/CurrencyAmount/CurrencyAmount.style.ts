@@ -9,16 +9,13 @@ export const styles = EStyleSheet.create({
   },
   text: {
     fontSize: 40,
-    fontWeight: "700",
     color: "$BUTTON_BACKGROUND_COLOR",
   },
   textInactive: {
     color: "$INACTIVE_TEXT_COLOR",
-    fontWeight: "700",
   },
   sign: {},
   input: {
-    fontFamily: "mulish-regular",
     width: "100%",
     textAlign: "center",
     transform: [{ scale: 1 }],

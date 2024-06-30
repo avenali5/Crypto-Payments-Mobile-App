@@ -36,7 +36,12 @@ export function CurrencyAmount() {
             : ""
         }
         suffix={currentCurrency === "EUR" ? ` ${currencySign}` : ""}
-        style={[styles.text, styles.input, pressing && styles.pressing]}
+        style={[
+          styles.text,
+          styles.input,
+          pressing && styles.pressing,
+          { fontFamily: "Mulish-Bold" },
+        ]}
         selectionColor="#00000050"
       />
     </View>

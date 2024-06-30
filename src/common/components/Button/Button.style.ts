@@ -31,7 +31,6 @@ export const styles = EStyleSheet.create({
   },
   text: {
     fontSize: "1rem",
-    fontWeight: "600",
     textAlign: "center",
     primary: {
       color: "#FFF",

@@ -16,7 +16,7 @@ export function PaymentTotal() {
           <CustomText style={styles.textWrapper.title}>
             Solicitud de pago
           </CustomText>
-          <CustomText style={styles.textWrapper.amount}>
+          <CustomText isBold style={styles.textWrapper.amount}>
             {currentCurrency === "USD" || currentCurrency === "GBP"
               ? `${currencySign} ${currentAmount?.toFixed(2)}`
               : `${currentAmount?.toFixed(2)} ${currencySign}`}

@@ -42,11 +42,12 @@ export const styles = EStyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    width: "96%",
+    width: "86%",
   },
   inputWrapper: {
     flexDirection: "row",
     alignItems: "center",
+    width: "90%",
   },
   prefixPicker: {
     flexDirection: "row",
@@ -59,6 +60,9 @@ export const styles = EStyleSheet.create({
     borderRadius: 6,
     label: {
       color: "#FFF",
+    },
+    disabled: {
+      opacity: 0.5,
     },
   },
 });

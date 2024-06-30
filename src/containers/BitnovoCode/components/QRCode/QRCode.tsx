@@ -29,7 +29,7 @@ export function QRCodeWrapper() {
           ecl="Q"
         />
       </View>
-      <CustomText style={styles.amount}>
+      <CustomText style={styles.amount} isBold>
         {" "}
         {currentCurrency === "USD" || currentCurrency === "GBP"
           ? `${currencySign} ${currentAmount?.toFixed(2)}`

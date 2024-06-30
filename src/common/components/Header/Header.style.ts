@@ -22,7 +22,6 @@ export const styles = EStyleSheet.create({
   },
   title: {
     fontSize: "1.2rem",
-    fontWeight: "700",
     textAlign: "center",
     color: "$TINT_COLOR_PRIMARY",
     flex: 1,

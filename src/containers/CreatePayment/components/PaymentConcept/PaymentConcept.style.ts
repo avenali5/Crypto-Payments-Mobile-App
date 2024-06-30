@@ -9,7 +9,6 @@ export const styles = EStyleSheet.create({
   },
   title: {
     color: "$TINT_COLOR_PRIMARY",
-    fontWeight: "700",
   },
   input: {
     padding: 18,
@@ -17,6 +16,7 @@ export const styles = EStyleSheet.create({
     borderWidth: 1,
     borderColor: "$INPUT_BORDER_COLOR",
     borderRadius: 6,
+    fontFamily: "Mulish-Regular",
   },
   focus: {
     borderColor: "$INPUT_FOCUS_BORDER_COLOR",

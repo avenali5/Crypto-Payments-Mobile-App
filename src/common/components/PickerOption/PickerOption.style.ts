@@ -14,7 +14,6 @@ export const styles = EStyleSheet.create({
   currName: {
     fontSize: ".9rem",
     color: "$TINT_COLOR_PRIMARY",
-    fontWeight: "700",
   },
   currShort: {
     fontSize: ".8rem",

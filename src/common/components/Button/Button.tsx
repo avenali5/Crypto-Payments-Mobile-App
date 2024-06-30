@@ -74,6 +74,7 @@ export function Button({
         />
       ) : (
         <CustomText
+          isBold
           style={[
             styles.text,
             styles.text[type],

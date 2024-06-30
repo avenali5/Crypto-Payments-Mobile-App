@@ -15,7 +15,9 @@ export function PaymentConcept() {
 
   return (
     <View style={styles.container}>
-      <CustomText style={styles.title}>Concepto</CustomText>
+      <CustomText isBold style={styles.title}>
+        Concepto
+      </CustomText>
       <TextInput
         maxLength={140}
         onFocus={() => setFocus(true)}

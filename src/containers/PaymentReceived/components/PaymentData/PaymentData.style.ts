@@ -20,7 +20,6 @@ export const styles = EStyleSheet.create({
   },
   title: {
     fontSize: "1.5rem",
-    fontWeight: "bold",
     color: "$TINT_COLOR_PRIMARY",
     marginVertical: 20,
   },
@@ -32,7 +31,6 @@ export const styles = EStyleSheet.create({
   },
   idText: {
     color: "$BUTTON_BACKGROUND_COLOR",
-    fontWeight: "bold",
   },
   dataItem: {
     flexDirection: "row",
@@ -54,7 +52,6 @@ export const styles = EStyleSheet.create({
   value: {
     fontSize: "1rem",
     color: "$TINT_COLOR_PRIMARY",
-    fontWeight: "bold",
     textAlign: "right",
     maxWidth: "60%",
   },
