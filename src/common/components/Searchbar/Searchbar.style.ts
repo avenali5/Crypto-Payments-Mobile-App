@@ -10,6 +10,10 @@ export const styles = EStyleSheet.create({
     backgroundColor: "$BACKGROUND_COLOR",
     borderRadius: 6,
     marginBottom: 16,
+    width: "100%",
+  },
+  inputContainer: {
+    width: "90%",
   },
   textInput: {
     fontSize: "1rem",
