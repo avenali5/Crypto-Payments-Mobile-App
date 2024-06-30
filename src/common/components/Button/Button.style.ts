@@ -19,6 +19,9 @@ export const styles = EStyleSheet.create({
       color: "$BUTTON_TEXT_COLOR_DISABLED",
     },
   },
+  loading: {
+    backgroundColor: "$BUTTON_BACKGROUND_COLOR_LOADING",
+  },
   type: {
     primary: {
       backgroundColor: "$BUTTON_BACKGROUND_COLOR",

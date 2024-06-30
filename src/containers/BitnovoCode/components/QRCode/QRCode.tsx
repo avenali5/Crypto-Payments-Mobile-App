@@ -8,7 +8,8 @@ import QRCode from "react-native-qrcode-svg";
 import { currencyStore } from "@/src/store";
 
 export function QRCodeWrapper() {
-  const { currentAmount, currencySign, currentCurrency } = currencyStore();
+  const { currentAmount, currencySign, currentCurrency, paymentURL } =
+    currencyStore();
   return (
     <View style={styles.container}>
       <View style={styles.instructions}>
@@ -19,7 +20,7 @@ export function QRCodeWrapper() {
       </View>
       <View style={styles.codeWrapper}>
         <QRCode
-          value="Just some string value"
+          value={paymentURL}
           logo={Logo}
           logoSize={Dimensions.get("window").width - 270}
           logoBackgroundColor="transparent"

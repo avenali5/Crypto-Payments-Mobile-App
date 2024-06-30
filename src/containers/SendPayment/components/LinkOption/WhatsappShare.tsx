@@ -13,7 +13,7 @@ import { styles } from "./LinkOption.style";
 import { CustomText } from "@/src/common/components";
 import WSP from "@/assets/icons/whatsapp.png";
 import Entypo from "@expo/vector-icons/Entypo";
-import { dialogStore } from "@/src/store";
+import { currencyStore, dialogStore } from "@/src/store";
 
 type Props = {
   countryCode: string;
@@ -26,13 +26,16 @@ export function WhatsappShare({ countryCode, setModal, setDialog }: Props) {
   const [focus, setFocus] = useState(false);
   const [phone, setPhone] = useState("");
   const { setDialogSubtitle } = dialogStore();
+  const { paymentURL } = currencyStore();
 
   const handlePress = () => {
     setActive(true);
   };
 
   const handleSend = () => {
-    Linking.openURL(`whatsapp://send?text=hello&phone=${countryCode}${phone}`)
+    Linking.openURL(
+      `whatsapp://send?text=Hola!\n\nTe envío una solicitud de pago de Bitnovo.\n${paymentURL}\n\nSaludos!&phone=${countryCode}${phone}`
+    )
       .then(() => {
         Keyboard.dismiss();
         setPhone("");

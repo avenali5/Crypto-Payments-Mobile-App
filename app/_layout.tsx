@@ -64,6 +64,12 @@ function RootLayoutNav() {
           header: () => <Header title="" hasBackArrow noShadow />,
         }}
       />
+      <Stack.Screen
+        name="payment-received"
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack>
   );
 }

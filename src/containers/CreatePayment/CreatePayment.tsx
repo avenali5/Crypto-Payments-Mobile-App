@@ -1,41 +1,51 @@
 import { CurrencyAmount } from "./components/CurrencyAmount/CurrencyAmount";
-import React from "react";
-import { Pressable, Text, View } from "react-native";
+import React, { useState } from "react";
+import { View } from "react-native";
 import { PaymentConcept } from "./components/PaymentConcept/PaymentConcept";
 import { Button } from "@/src/common/components";
 import { styles } from "./CreatePayment.style";
 import { currencyStore } from "@/src/store";
 import { useRouter } from "expo-router";
 import { postOrder } from "@/src/common/services";
-import { BASE_URL } from "@/src/common/constants/services";
 
 export function CreatePayment() {
-  const { currentAmount, currentCurrency, reference } = currencyStore();
+  const {
+    currentAmount,
+    currentCurrency,
+    reference,
+    setPaymentURL,
+    setIdentifier,
+  } = currencyStore();
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const [disabled, setDisabled] = useState(false);
 
   const handleCreatePayment = async () => {
+    setLoading(true);
+    setDisabled(true);
     postOrder({
       amount: currentAmount!,
       fiat: currentCurrency,
       reference,
     }).then((res) => {
-      // console.log(res);
+      setLoading(false);
+      setDisabled(false);
+      setPaymentURL(res.web_url);
+      setIdentifier(res.identifier);
+      router.push("/send-payment");
     });
-    router.push("/send-payment");
   };
 
   return (
     <View style={styles.container}>
       <CurrencyAmount />
       <PaymentConcept />
-      <Pressable onPress={handleCreatePayment}>
-        <Text style={{ fontFamily: "Mulish-Bold", fontSize: 30 }}>pressa</Text>
-      </Pressable>
       <Button
         type="primary"
         text="Continuar"
-        disabled={currentAmount === 0 || !currentAmount}
+        disabled={currentAmount! < 0.1 || !currentAmount || disabled}
         onPress={handleCreatePayment}
+        loading={loading}
       />
     </View>
   );

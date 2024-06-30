@@ -13,7 +13,7 @@ import { styles } from "./LinkOption.style";
 import { CustomText } from "@/src/common/components";
 import Email from "@/assets/icons/envelope.png";
 import qs from "qs";
-import { dialogStore } from "@/src/store";
+import { currencyStore, dialogStore } from "@/src/store";
 
 type Props = {
   setDialog: (val: boolean) => void;
@@ -24,6 +24,7 @@ export function EmailShare({ setDialog }: Props) {
   const [email, setEmail] = useState("");
   const [focus, setFocus] = useState(false);
   const { setDialogSubtitle } = dialogStore();
+  const { paymentURL } = currencyStore();
 
   const handlePress = () => {
     setActive(true);
@@ -92,7 +93,7 @@ export function EmailShare({ setDialog }: Props) {
                   sendEmail(
                     email,
                     "Solicitud de pago de Bitnovo",
-                    `Hola!\n\nTe envío una solicitud de pago de Bitnovo.\nhttps://link.com\n\nSaludos!
+                    `Hola!\n\nTe envío una solicitud de pago de Bitnovo.\n${paymentURL}\n\nSaludos!
                     `
                   );
                 }}

@@ -5,6 +5,10 @@ type CurrencyState = {
   currentAmount: number | null;
   currencySign: string;
   reference: string;
+  paymentURL: string;
+  identifier: string;
+  setPaymentURL: (url: string) => void;
+  setIdentifier: (id: string) => void;
   setReference: (newReference: string) => void;
   setCurrency: (newCurrency: string) => void;
   setAmount: (newAmount: number | null) => void;
@@ -16,6 +20,10 @@ export const currencyStore = create<CurrencyState>((set) => ({
   currentAmount: 0,
   currencySign: "$",
   reference: "",
+  paymentURL: "",
+  identifier: "",
+  setIdentifier: (id: string) => set(() => ({ identifier: id })),
+  setPaymentURL: (url: string) => set(() => ({ paymentURL: url })),
   setReference: (newReference: string) =>
     set(() => ({ reference: newReference })),
   setCurrency: (newCurrency: string) => {

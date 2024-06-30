@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { View } from "react-native";
 import { styles } from "./BitnovoCode.style";
 import { QRCodeWrapper } from "./components/QRCode/QRCode";

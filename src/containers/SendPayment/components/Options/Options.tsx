@@ -14,7 +14,7 @@ type Props = {
 
 export function Options({ setDialog }: Props) {
   const [visible, setVisible] = useState(false);
-  const [countryCode, setCountryCode] = useState("+33");
+  const [countryCode, setCountryCode] = useState("+34");
 
   return (
     <View style={styles.container}>

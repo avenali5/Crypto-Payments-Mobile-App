@@ -25,7 +25,7 @@ export function CountryPicker({
   const [searchValue, setSearchValue] = useState("");
   const countries = [
     {
-      code: "+33",
+      code: "+34",
       country: "España",
       flag: FlagESP,
     },
