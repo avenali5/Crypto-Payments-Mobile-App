@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Image,
-  ImageSourcePropType,
-  Pressable,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, Pressable, TouchableOpacity, View } from "react-native";
 import { styles } from "./LinkOption.style";
 import { CustomText } from "@/src/common/components";
 import QRCode from "@/assets/icons/scan_barcode.png";

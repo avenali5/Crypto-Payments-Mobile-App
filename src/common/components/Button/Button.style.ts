@@ -1,5 +1,4 @@
 import EStyleSheet from "react-native-extended-stylesheet";
-import Constants from "expo-constants";
 
 export const PADDING = 16;
 

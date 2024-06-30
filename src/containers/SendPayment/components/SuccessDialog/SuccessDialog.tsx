@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Image, Platform, Pressable, View } from "react-native";
+import React from "react";
+import { Image, Platform, View } from "react-native";
 import { styles } from "./SuccessDialog.style";
 import { Button, CustomText } from "@/src/common/components";
 import Check from "@/assets/icons/success_check.png";
@@ -16,7 +16,6 @@ export function SuccessDialog({ setDialog }: Props) {
   return (
     <View style={styles.container}>
       <BlurView
-        // tint="systemChromeMaterialDark"
         intensity={Platform.OS === "ios" ? 20 : 80}
         style={styles.background}
         experimentalBlurMethod="dimezisBlurView"

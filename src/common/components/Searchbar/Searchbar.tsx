@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Pressable, TextInput, View } from "react-native";
+import { TextInput, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { styles } from "./Searchbar.style";
 

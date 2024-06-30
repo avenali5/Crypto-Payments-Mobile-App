@@ -9,7 +9,6 @@ import {
 import { CustomText } from "..";
 import { styles } from "./Button.style";
 import Loading from "@/assets/icons/spinner.png";
-// import Animated from "react-native-reanimated";
 
 type Props = {
   text: string;

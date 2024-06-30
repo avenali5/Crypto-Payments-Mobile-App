@@ -3,7 +3,6 @@ import EStyleSheet from "react-native-extended-stylesheet";
 
 export const styles = EStyleSheet.create({
   container: {
-    // height: Dimensions.get("window").height,
     width: Dimensions.get("window").width,
     height: "100%",
     position: "absolute",

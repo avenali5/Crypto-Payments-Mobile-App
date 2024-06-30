@@ -12,7 +12,6 @@ import {
 import { styles } from "./LinkOption.style";
 import { CustomText } from "@/src/common/components";
 import Email from "@/assets/icons/envelope.png";
-import qs from "qs";
 import { currencyStore, dialogStore } from "@/src/store";
 
 type Props = {

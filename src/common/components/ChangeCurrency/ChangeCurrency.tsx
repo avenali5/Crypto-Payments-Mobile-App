@@ -1,9 +1,8 @@
 import { currencyStore } from "@/src/store";
 import React from "react";
-import { Image, View } from "react-native";
+import { View } from "react-native";
 import { CustomText } from "../CustomText/CustomText";
 import { styles } from "./ChangeCurrency.style";
-// import ChevronDown from "@/assets/icons/chevron_down.svg";
 import { Link } from "expo-router";
 import Entypo from "@expo/vector-icons/Entypo";
 
