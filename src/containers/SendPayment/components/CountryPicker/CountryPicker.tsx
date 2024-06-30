@@ -1,4 +1,4 @@
-import { Header, PickerOption, Searchbar } from "@/src/common/components";
+import { Searchbar } from "@/src/common/components";
 import React, { useEffect, useState } from "react";
 import { View } from "react-native";
 import { styles } from "./CountryPicker.style";
@@ -10,6 +10,8 @@ import FlagGUA from "@/assets/images/flag_guatemala.png";
 import FlagGUY from "@/assets/images/flag_guyana.png";
 import FlagHNK from "@/assets/images/flag_hong.png";
 import FlagHON from "@/assets/images/flag_honduras.png";
+import { PickerOption } from "@/src/common/components/PickerOption/PickerOption";
+import { Header } from "@/src/common/components/Header/Header";
 
 type Props = {
   setCountryCode: (code: string) => void;

@@ -2,11 +2,11 @@ import { CurrencyAmount } from "./components/CurrencyAmount/CurrencyAmount";
 import React, { useState } from "react";
 import { View } from "react-native";
 import { PaymentConcept } from "./components/PaymentConcept/PaymentConcept";
-import { Button } from "@/src/common/components";
 import { styles } from "./CreatePayment.style";
 import { currencyStore } from "@/src/store";
 import { useRouter } from "expo-router";
 import { postOrder } from "@/src/common/services";
+import { Button } from "@/src/common/components/Button/Button";
 
 export function CreatePayment() {
   const {

@@ -6,3 +6,12 @@ export type CreateOrderResponseType = {
   reference: string;
   web_url: string;
 };
+
+export type PaymentDataProps = {
+  date: string;
+  identifier: string;
+  total: number;
+  fiat: string;
+  cripto: string;
+  reference: string;
+};

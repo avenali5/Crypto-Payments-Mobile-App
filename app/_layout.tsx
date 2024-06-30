@@ -1,4 +1,3 @@
-import { Header } from "@/src/common/components";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
@@ -6,6 +5,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
 import "../src/common/constants/Colors";
+import { Header } from "@/src/common/components/Header/Header";
 export { ErrorBoundary } from "expo-router";
 
 SplashScreen.preventAutoHideAsync();

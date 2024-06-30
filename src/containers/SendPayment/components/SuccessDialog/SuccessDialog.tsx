@@ -1,10 +1,11 @@
 import React from "react";
 import { Image, Platform, View } from "react-native";
 import { styles } from "./SuccessDialog.style";
-import { Button, CustomText } from "@/src/common/components";
+import { CustomText } from "@/src/common/components";
 import Check from "@/assets/icons/success_check.png";
 import { dialogStore } from "@/src/store";
 import { BlurView } from "expo-blur";
+import { Button } from "@/src/common/components/Button/Button";
 
 type Props = {
   setDialog: (value: boolean) => void;

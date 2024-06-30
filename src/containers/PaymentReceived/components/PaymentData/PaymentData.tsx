@@ -7,16 +7,10 @@ import Cripto from "@/assets/icons/coin.png";
 import Quantity from "@/assets/icons/moneys.png";
 import Reference from "@/assets/icons/reference.png";
 import { CustomText } from "@/src/common/components";
+import { PaymentDataProps } from "@/src/common/types";
 
 type Props = {
-  params: {
-    date: string;
-    identifier: string;
-    total: number;
-    fiat: string;
-    cripto: string;
-    reference: string;
-  };
+  params: PaymentDataProps;
 };
 
 export function PaymentData({ params }: Props) {

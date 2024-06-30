@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { View } from "react-native";
 import { styles } from "./SendPayment.style";
-import { Button } from "@/src/common/components";
 import { PaymentTotal } from "./components/PaymentTotal/PaymentTotal";
 import { useNavigation, useRouter } from "expo-router";
 import { Options } from "./components/Options/Options";
 import WalletIcon from "@/assets/icons/wallet_add.png";
 import { SuccessDialog } from "./components/SuccessDialog/SuccessDialog";
 import { currencyStore } from "@/src/store";
+import { Button } from "@/src/common/components/Button/Button";
 
 export function SendPayment() {
   const router = useRouter();
