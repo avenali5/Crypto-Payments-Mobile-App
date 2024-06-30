@@ -31,24 +31,11 @@ export function EmailShare({ setDialog }: Props) {
   };
 
   async function sendEmail(to: string, subject: string, body: string) {
-    let url = `mailto:${to}`;
+    let url = `mailto:${to}?subject=${subject}&body=${body}`;
 
-    const query = qs.stringify({
-      subject: subject,
-      body: body,
-    });
+    console.log(to, subject, body);
 
-    if (query.length) {
-      url += `?${query}`;
-    }
-
-    const canOpen = await Linking.canOpenURL(url);
-
-    if (!canOpen) {
-      throw new Error("Provided URL can not be handled");
-    }
-
-    return Linking.openURL(url)
+    Linking.openURL(url)
       .then(() => {
         Keyboard.dismiss();
         setEmail("");

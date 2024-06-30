@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "bitnovo2",
-    "slug": "bitnovo2",
+    "name": "BN Avenali",
+    "slug": "bn-avenali",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -17,6 +17,7 @@
       "bundleIdentifier": "com.anonymous.bitnovo2"
     },
     "android": {
+      "package": "com.alejoavenali.bitnovo",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -41,6 +42,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "7d57ca2f-8bb4-46eb-9edb-ca25c4090fa7"
+      }
     }
   }
 }
