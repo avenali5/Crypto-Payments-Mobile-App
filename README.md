@@ -1,18 +1,17 @@
-## Challenge Técnico Bitnovo
-El proyecto es una app nativa para Android y iOS en la que se puede crear una solicitud de pago y compartirla ya sea con link, email, Whatsapp o con QR.
-Esa solicitud puede ser pagada con cryptomonedas test y, una vez realizado, la app muestra un mensaje de pago exitoso. 
+# Description
+The project is a mobile app for Android and iOS that uses Bitnovo's test API, where you can create a payment request in USD, EUR or GBP and share it via link, email, WhatsApp, or QR code. This payment request can be paid with test cryptocurrencies following the link generated and once completed, the app displays a successful payment message in real time.
+In order to get test crypto you can use any faucet of your choice, for example Google's https://cloud.google.com/application/web3/faucet/ethereum 
 
-## Stack usado
-- React Native y Expo
-- Typescript
+# Tech Stack Used
+- React Native and Expo
+- TypeScript
 - Axios
 - Zustand
 - Web Sockets
-
-## Testing local
-- Clonar repositorio
-- Correr npm install (Si falla agregar --legacy-peer-deps)
+  
+# Local Testing
+- Clone the repository
+- Run npm install (If it fails, add --legacy-peer-deps)
 - npm start
 
-## Testing producción
-Descargar APK: https://drive.google.com/drive/u/1/folders/1Zb7TFI1cilbm1z87BQRhjRme0n63YAuN
+
