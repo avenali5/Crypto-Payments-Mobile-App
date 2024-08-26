@@ -14,7 +14,7 @@ export function AppsShare({ setDialog }: Props) {
   const { paymentURL } = currencyStore();
 
   const successShare = () => {
-    setDialogSubtitle("Tu solicitud de pago ha sido enviada con éxito.");
+    setDialogSubtitle("Your payment request has been shared successfully");
     setTimeout(() => {
       setDialog(true);
     }, 1000);
@@ -24,7 +24,7 @@ export function AppsShare({ setDialog }: Props) {
     try {
       const result = await Share.share({
         title: "App link",
-        message: `Hola!\n\nTe envío una solicitud de pago de Bitnovo.\n${paymentURL}\n\nSaludos`,
+        message: `Hi!\n\nHere's a Bitnovo payment request.\n${paymentURL}\n\nGreetings!`,
         url: paymentURL,
       });
       if (result.action === Share.sharedAction) {
@@ -43,7 +43,7 @@ export function AppsShare({ setDialog }: Props) {
         <Image source={ShareIcon} style={styles.icon} />
         <View>
           <CustomText style={styles.label}>
-            Compartir con otras aplicaciones
+            Share with apps
           </CustomText>
         </View>
       </View>

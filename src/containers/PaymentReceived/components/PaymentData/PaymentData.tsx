@@ -27,7 +27,7 @@ export function PaymentData({ params }: Props) {
       <View style={styles.card}>
         <Image source={Check} style={styles.check} />
         <CustomText isBold style={styles.title}>
-          ¡Pago recibido exitosamente!
+          Payment received!
         </CustomText>
         <View style={styles.idWrapper}>
           <CustomText style={styles.idText} isBold>
@@ -38,28 +38,28 @@ export function PaymentData({ params }: Props) {
       <View>
         <View style={styles.dataItem}>
           <Image source={Quantity} style={styles.icon} />
-          <CustomText style={styles.label}>Cantidad</CustomText>
+          <CustomText style={styles.label}>Amount</CustomText>
           <CustomText style={styles.value} isBold>
             {params.total} {params.fiat}
           </CustomText>
         </View>
         <View style={styles.dataItem}>
           <Image source={Calendar} style={styles.icon} />
-          <CustomText style={styles.label}>Pagado en</CustomText>
+          <CustomText style={styles.label}>Date</CustomText>
           <CustomText style={styles.value} isBold>
             {formattedDate}
           </CustomText>
         </View>
         <View style={styles.dataItem}>
           <Image source={Cripto} style={styles.icon} />
-          <CustomText style={styles.label}>Criptomoneda</CustomText>
+          <CustomText style={styles.label}>Cryptocurrency</CustomText>
           <CustomText style={styles.value} isBold>
             {params.cripto}
           </CustomText>
         </View>
         <View style={styles.dataItem}>
           <Image source={Reference} style={styles.icon} />
-          <CustomText style={styles.label}>Referencia</CustomText>
+          <CustomText style={styles.label}>Reference</CustomText>
           <CustomText style={styles.value} isBold>
             {params.reference || "-"}
           </CustomText>

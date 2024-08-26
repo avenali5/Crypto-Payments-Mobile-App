@@ -13,7 +13,7 @@ export function PaymentReceived() {
     <View style={styles.container}>
       <PaymentData params={params} />
       <Button
-        text="Entendido"
+        text="Understood"
         type="primary"
         onPress={() => router.push("/")}
       />

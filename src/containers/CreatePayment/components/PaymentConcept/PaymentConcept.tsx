@@ -16,7 +16,7 @@ export function PaymentConcept() {
   return (
     <View style={styles.container}>
       <CustomText isBold style={styles.title}>
-        Concepto
+        Reference
       </CustomText>
       <TextInput
         maxLength={140}
@@ -25,12 +25,12 @@ export function PaymentConcept() {
         onChangeText={setValue}
         style={[styles.input, focus && styles.focus]}
         multiline
-        placeholder="Añade descripción del pago"
+        placeholder="Add payment description"
       />
       {focus && (
         <View style={styles.characters}>
           <CustomText style={styles.characters.text}>
-            {reference.length}/140 caracteres
+            {reference.length}/140 characters
           </CustomText>
         </View>
       )}

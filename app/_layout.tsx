@@ -40,14 +40,14 @@ function RootLayoutNav() {
       <Stack.Screen
         name="index"
         options={{
-          header: () => <Header title="Crear pago" hasDropdown />,
+          header: () => <Header title="Create payment" hasDropdown />,
         }}
       />
       <Stack.Screen
         name="change-currency"
         options={{
           header: () => (
-            <Header title="Selecciona una divisa" hasBackArrow noShadow />
+            <Header title="Select a currency" hasBackArrow noShadow />
           ),
         }}
       />

@@ -39,7 +39,7 @@ export function EmailShare({ setDialog }: Props) {
         Keyboard.dismiss();
         setEmail("");
         setDialogSubtitle(
-          "Tu solicitud de pago ha sido enviada con éxito por email."
+          "Your payment request has been sent successfully"
         );
         setTimeout(() => {
           setActive(false);
@@ -49,7 +49,7 @@ export function EmailShare({ setDialog }: Props) {
       .catch(() => {
         Alert.alert(
           "Error",
-          "No puedes abrir la app de email en este dispositivo"
+          "You can't open the email app on this device."
         );
       });
   }
@@ -79,8 +79,8 @@ export function EmailShare({ setDialog }: Props) {
                 onPress={() => {
                   sendEmail(
                     email,
-                    "Solicitud de pago de Bitnovo",
-                    `Hola!\n\nTe envío una solicitud de pago de Bitnovo.\n${paymentURL}\n\nSaludos!
+                    "Bitnovo Payment Request",
+                    `Hi!\n\nHere's a Bitnovo payment request.\n${paymentURL}\n\nGreetings!
                     `
                   );
                 }}
@@ -90,7 +90,7 @@ export function EmailShare({ setDialog }: Props) {
             </View>
           ) : (
             <CustomText style={styles.label}>
-              Enviar por correo electrónico
+              Send via email
             </CustomText>
           )}
         </View>

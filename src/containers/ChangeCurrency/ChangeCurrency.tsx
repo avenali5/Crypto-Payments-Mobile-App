@@ -20,12 +20,12 @@ export function ChangeCurrency() {
       flag: FlagEUR,
     },
     {
-      name: "Dólar Estadounidense",
+      name: "US Dollar",
       short: "USD",
       flag: FlagUSA,
     },
     {
-      name: "Libra Esterlina",
+      name: "Sterling Pound",
       short: "GBP",
       flag: FlagGBP,
     },

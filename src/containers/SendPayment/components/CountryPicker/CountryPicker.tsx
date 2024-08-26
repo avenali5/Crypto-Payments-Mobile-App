@@ -28,7 +28,7 @@ export function CountryPicker({
   const countries = [
     {
       code: "+34",
-      country: "España",
+      country: "Spain",
       flag: FlagESP,
     },
     {
@@ -38,7 +38,7 @@ export function CountryPicker({
     },
     {
       code: "+30",
-      country: "Grecia",
+      country: "Greece",
       flag: FlagGRE,
     },
     {
@@ -87,7 +87,7 @@ export function CountryPicker({
   return (
     <View>
       <Header
-        title="Seleccionar país"
+        title="Select country"
         hasBackArrow
         noShadow
         onBackPress={() => setModal(false)}

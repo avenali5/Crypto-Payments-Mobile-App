@@ -24,10 +24,10 @@ export function SuccessDialog({ setDialog }: Props) {
       />
       <View style={styles.card}>
         <Image source={Check} style={styles.img} />
-        <CustomText style={styles.title}>Solicitud enviada</CustomText>
+        <CustomText style={styles.title}>Request sent</CustomText>
         <CustomText style={styles.subtitle}>{dialogSubtitle}</CustomText>
         <Button
-          text="Entendido"
+          text="Understood"
           type="primary"
           onPress={() => setDialog(false)}
         />

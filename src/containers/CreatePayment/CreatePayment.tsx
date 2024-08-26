@@ -42,7 +42,7 @@ export function CreatePayment() {
       <PaymentConcept />
       <Button
         type="primary"
-        text="Continuar"
+        text="Continue"
         disabled={currentAmount! < 0.1 || !currentAmount || disabled}
         onPress={handleCreatePayment}
         loading={loading}

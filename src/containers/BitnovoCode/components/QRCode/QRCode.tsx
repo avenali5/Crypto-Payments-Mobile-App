@@ -15,7 +15,7 @@ export function QRCodeWrapper() {
       <View style={styles.instructions}>
         <Image source={Exclamation} style={styles.icon} />
         <CustomText style={styles.label}>
-          Escanea el QR y serás redirigido a la pasarela de pago de Bitnovo Pay.
+          Scan the QR code and you'll be redirected to Bitnovo Pay's payment gateway.
         </CustomText>
       </View>
       <View style={styles.codeWrapper}>
@@ -36,7 +36,7 @@ export function QRCodeWrapper() {
           : `${currentAmount?.toFixed(2)} ${currencySign}`}
       </CustomText>
       <CustomText style={styles.willUpdate}>
-        Esta pantalla se actualizará automáticamente.
+        This screen will automatically updated
       </CustomText>
     </View>
   );

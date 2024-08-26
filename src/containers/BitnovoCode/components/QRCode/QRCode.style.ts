@@ -31,6 +31,7 @@ export const styles = EStyleSheet.create({
   label: {
     color: "$TINT_COLOR_PRIMARY",
     fontSize: ".8rem",
+    flex: 1
   },
   amount: {
     fontSize: "1.8rem",

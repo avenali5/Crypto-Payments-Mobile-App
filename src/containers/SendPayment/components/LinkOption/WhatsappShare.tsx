@@ -34,13 +34,13 @@ export function WhatsappShare({ countryCode, setModal, setDialog }: Props) {
 
   const handleSend = () => {
     Linking.openURL(
-      `whatsapp://send?text=Hola!\n\nTe envío una solicitud de pago de Bitnovo.\n${paymentURL}\n\nSaludos!&phone=${countryCode}${phone}`
+      `whatsapp://send?text=Hi!\n\nHere's a Bitnovo payment request.\n${paymentURL}\n\nGreetings!&phone=${countryCode}${phone}`
     )
       .then(() => {
         Keyboard.dismiss();
         setPhone("");
         setDialogSubtitle(
-          "Tu solicitud de pago ha sido enviada con éxito por WhatsApp."
+          "Your payment request has been sent successfully via Whatsapp"
         );
         setTimeout(() => {
           setActive(false);
@@ -48,7 +48,7 @@ export function WhatsappShare({ countryCode, setModal, setDialog }: Props) {
         }, 1000);
       })
       .catch(() => {
-        Alert.alert("Error", "Whatsapp no está instalado en su dispositivo");
+        Alert.alert("Error", "Whatsapp not installed");
       });
   };
 
@@ -83,12 +83,12 @@ export function WhatsappShare({ countryCode, setModal, setDialog }: Props) {
                 style={[styles.cta, phone.length === 0 && styles.cta.disabled]}
                 disabled={phone.length === 0}
               >
-                <CustomText style={styles.cta.label}>Enviar</CustomText>
+                <CustomText style={styles.cta.label}>Send</CustomText>
               </TouchableOpacity>
             </View>
           ) : (
             <CustomText style={styles.label}>
-              Enviar a número de Whatsapp
+              Send to Whatsapp number
             </CustomText>
           )}
         </View>

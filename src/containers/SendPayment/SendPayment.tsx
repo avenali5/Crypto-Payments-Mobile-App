@@ -62,7 +62,7 @@ export function SendPayment() {
         <PaymentTotal />
         <Options setDialog={setSuccessShare} />
         <Button
-          text="Nueva solicitud"
+          text="New Request"
           type="secondary"
           onPress={handleNewRequest}
           icon={WalletIcon}

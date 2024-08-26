@@ -34,7 +34,7 @@ export function Searchbar({
       <View style={styles.inputContainer}>
         <TextInput
           value={inputValue}
-          placeholder="Buscar"
+          placeholder="Search"
           placeholderTextColor="#9F9F9F"
           style={styles.textInput}
           onChangeText={handlChange}

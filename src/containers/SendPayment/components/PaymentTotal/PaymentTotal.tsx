@@ -14,7 +14,7 @@ export function PaymentTotal() {
         <Image source={MoneyTime} style={styles.icon} />
         <View style={styles.textWrapper}>
           <CustomText style={styles.textWrapper.title}>
-            Solicitud de pago
+            Payment request
           </CustomText>
           <CustomText isBold style={styles.textWrapper.amount}>
             {currentCurrency === "USD" || currentCurrency === "GBP"
@@ -25,7 +25,7 @@ export function PaymentTotal() {
       </View>
       <View style={styles.bottomWrapper}>
         <CustomText style={styles.bottomWrapper.text}>
-          Comparte el enlace de pago con el cliente
+          Share this payment request with your friends
         </CustomText>
       </View>
     </View>
